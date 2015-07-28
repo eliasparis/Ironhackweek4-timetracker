@@ -8,9 +8,9 @@ class Project < ActiveRecord::Base
 		projects = where("created_at < ?", Date.current - 1.week)
 		projects.destroy_all
 	end
+
 	def self.last_created_projects(number)
-		order(created_at: :desc).limit(number)
-		
+		order(created_at: :desc).limit(number)	
 	end
 
 end
