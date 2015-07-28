@@ -1,0 +1,11 @@
+<h1>Last 10 projects</h1>
+<ul>
+	<% @projects.each do |project| %>
+		<% if project.description.empty? %>
+		<li><%= project.name %></li>
+		<% else %>
+		<li><%= project.name %> - <%= project.description %> </li>
+		<% end %>
+	<% end %>
+</ul>
+<a href="/">Back to homesite</a>
