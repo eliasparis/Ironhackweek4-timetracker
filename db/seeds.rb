@@ -5,5 +5,17 @@ Project.create name: 'Recipes', description: 'Track my favourite Recipes'
 
 25.times do |i|
 	
-	Project.create name: "Name#{i}"  , description: 'ttttt'
+	project = Project.create name: "Name#{i}"  , description: 'ttttt'
+	project.entries.create(hours: "#{i+2}" , minutes: "#{i+30}") 
+
 end
+
+
+
+
+
+
+
+
+
+ 
