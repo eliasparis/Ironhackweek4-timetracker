@@ -1,6 +1,11 @@
 <h1><%= @project.name%></h1>
 <%@entries.each do |entries|%>
-	<p><%= entries.hours %> hours and <%= entries.minutes %> minutes /// Date: <%= entries.created_at %></p>
+	<p><%= entries.hours %> hours and <%= entries.minutes %> minutes /// Date: <%= entries.created_at %>
+	<%= link_to("Edit", edit_project_entry_path(@project, entries)) %>  <%= link_to("    => Delete", project_entry_path(@project, entries),method: :delete, data: {confirm: ' Sure?'}) %>
+	</p>
 <% end %>
+
+<%= link_to("Go to projects", projects_path(@project)) %>
+<%= link_to("Add new entry", new_project_entry_path(@project)) %>
 
 <h6>Powered by ironhack</h6>

@@ -1,10 +1,10 @@
 <h1>Last 10 projects</h1>
 <ul>
 	<% @projects.each do |project| %>
-		<% if project.description.empty? %>
-		<li><%= project.name %></li>
+		<% if project.description%>
+		<li><%= link_to(project.name, project_entries_path(project)) %><%= link_to("    => Delete", project_path(project),method: :delete, data: {confirm: ' Sure?'}) %></li>
 		<% else %>
-		<li><%= project.name %> - <%= project.description %> </li>
+		<li><%= link_to(project.name, project_entries_path(project)) %> - <%= project.description %> <%= link_to("    => Delete", project_path(project),method: :delete, data: {confirm: ' Sure?'}) %></li>
 		<% end %>
 	<% end %>
 </ul>

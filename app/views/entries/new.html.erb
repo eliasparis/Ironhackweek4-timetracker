@@ -1,0 +1,27 @@
+EYYYYYY new entry
+
+<% if @entry.errors.any? %>
+	<ul>
+		<%@entry.errors.full_messages.each do |error| %>
+		<li><%= error %></li>
+		<% end %>
+	</ul>
+<% end %>
+
+<%= form_for [@project, @entry] do |f| %>
+	<%= f.label :hours %>
+	<%= f.text_field :hours %>
+	<br>
+	<%= f.label :minutes %>
+	<%= f.text_field :minutes %>
+	<br>
+	<%= f.label :comments %>
+	<%= f.text_field :comments %>
+	<br>
+	<%= f.submit "Save" %>
+<%end%>
+<br>
+<%= link_to("Cancel", project_entries_path(@project)) %>
+
+
+
