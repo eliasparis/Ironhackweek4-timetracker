@@ -1,9 +1,13 @@
 <h1><%= @project.name%></h1>
+
 <%@entries.each do |entries|%>
 	<p><%= entries.hours %> hours and <%= entries.minutes %> minutes /// Date: <%= entries.created_at %>
 	<%= link_to("Edit", edit_project_entry_path(@project, entries)) %>  <%= link_to("    => Delete", project_entry_path(@project, entries),method: :delete, data: {confirm: ' Sure?'}) %>
 	</p>
 <% end %>
+
+<%= display_flash%>
+<br>
 
 <%= link_to("Go to projects", projects_path(@project)) %>
 <%= link_to("Add new entry", new_project_entry_path(@project)) %>

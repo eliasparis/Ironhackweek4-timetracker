@@ -1,6 +1,7 @@
 class Project < ActiveRecord::Base
 
 	has_many :entries
+	has_many :people , through :participations
 	validates :name, presence: true , uniqueness: true, length: {maximum: 30} , format: {with: /\A[0-9a-zA-z ]+\z/}
 	
 	def self.iron_find(id)

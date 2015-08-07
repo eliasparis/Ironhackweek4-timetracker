@@ -1,17 +1,7 @@
-Editing <%= @project.name %>
+Editing 
+<%= display_flash %>
 
 
-<%= form_for [@project, @entry] do |f| %>
-	<%= f.label :hours %>
-	<%= f.text_field :hours %>
-	<br>
-	<%= f.label :minutes %>
-	<%= f.text_field :minutes %>
-	<br>
-	<%= f.label :comments %>
-	<%= f.text_field :comments %>
-	<br>
-	<%= f.submit "Save" %>
-<%end%>
+<%= render 'form' %>
 <br>
 <%= link_to("Cancel", project_entries_path(@project)) %>

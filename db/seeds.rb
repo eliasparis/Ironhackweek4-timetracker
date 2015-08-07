@@ -5,6 +5,10 @@
 
 end
 
+Person.create name: "Elias"
+Person.create name: "Eli"
+Person.create name: "Alberto"
+
 
 
 
